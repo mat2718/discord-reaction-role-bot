@@ -1,77 +1,97 @@
-# Discord Reaction Role Bot
+# Create Discord Bot
 
 [![Discord](https://discord.com/api/guilds/258167954913361930/embed.png)](https://discord.gg/WjEFnzC) [![Twitter Follow](https://img.shields.io/twitter/follow/peterthehan.svg?style=social)](https://twitter.com/peterthehan)
 
-A Discord bot that allows users to self-assign roles using reactions.
+A module-based Discord bot template.
 
-<div align="center">
-  <img
-    src="https://raw.githubusercontent.com/peterthehan/discord-reaction-role-bot/master/assets/demo.gif"
-    alt="demo"
-  />
-</div>
+## Getting started
 
-## Setup
+### Register a Discord bot application
 
-1. Follow the instructions in [create-discord-bot](https://github.com/peterthehan/create-discord-bot).
+1. Go to Discord's [Developer Portal](https://discord.com/developers/applications).
+2. Create a new application.
 
-   > Don't forget to give your bot the `Manage Roles` and `Manage Messages` permissions (only grant the latter if the bot should handle reactions)!
+   > Take note of the `APPLICATION ID` on the General Information tab page. You will need it to invite the bot to your server in step 5.
 
-2. Download this bot and move the `src-discord-reaction-role-bot` folder into the [/src/bots](https://github.com/peterthehan/create-discord-bot/tree/master/src/bots) folder from step 1.
+3. Go to the Bot tab and add a bot user to your application.
 
-3. Open [config.json](./src-discord-reaction-role-bot/config.json) to configure your own settings:
+   > Take note of the `TOKEN` on the Bot tab page. You will need it in step 3 of the next section.
 
-   ```json
-   [
-     {
-       "messageId": "858190737065902101",
-       "channelId": "258314939998011393",
-       "removeReaction": true,
-       "policy": "any",
-       "emojiRoleMap": {
-         "🤖": ["858186589187735565"],
-         "🎉": ["542138999511187486"],
-         "🥤": ["785794153089990688"]
-       }
-     }
-   ]
+   > Keep your token and any file containing it **private**. If it ever leaks or you suspect it may have leaked, simply `regenerate` a new token to invalidate your compromised token.
+
+4. While in the Bot tab, scroll down to the Privileged Gateway Intents section and enable the toggles for both `Presence Intent` and `Server Members Intent`. More information on Gateway Intents can be found here:
+
+   - [Gateway Update FAQ](https://support-dev.discord.com/hc/en-us/articles/360056426994)
+   - [Privileged Intents](https://discord.com/developers/docs/topics/gateway#privileged-intents)
+
+5. Lastly, invite the bot to your server using the following link template: [https://discord.com/oauth2/authorize?scope=bot&client_id=APPLICATION_ID_HERE](https://discord.com/oauth2/authorize?scope=bot&client_id=APPLICATION_ID_HERE)
+
+### Create a Discord bot project
+
+1. Run the following commands to bootstrap a Discord bot project in your working directory:
+
+   > Replace `my-discord-bot` in the commands below with your own preferred project name!
+
+   ```
+   npx degit peterthehan/create-discord-bot my-discord-bot
    ```
 
-   Add as many rules as you want to configure for other servers.
+   ```
+   cd my-discord-bot
+   ```
 
-   - `messageId` is the message you want the bot to react to for your reaction roles.
-   - `channelId` is the text channel the message is in.
-   - `removeReaction` determines whether the user reaction is removed (`true`) or not (`false`).
-   - `policy` **must** be one of the following strings:
+   ```
+   npm i
+   ```
 
-     - `once`: User is only allowed to react and claim roles once. Subsequent reactions are ignored.
-     - `any`: User can react and claim as many roles as they want.
-     - `unique` (default): User can react and claim only one emoji's set of roles at a time.
+2. Run the following command to rename the existing `.env.example` file to `.env`:
 
-   - `emojiRoleMap` is a _one-to-many_ key-value map between emoji and role ids. An emoji can be:
+   ```
+   mv .env.example .env
+   ```
 
-     - A unicode emoji. https://emojipedia.org is a good reference to copy and paste from.
+3. Open the `.env` file and add your Discord bot token.
 
-       ```json
-         "emojiRoleMap": {
-           "😳": ["ROLE_1_ID"],
-           "🥺": ["ROLE_2_ID", "ROLE_3_ID", "ROLE_4_ID"]
-         }
-       ```
+4. Lastly, run the following command to start the bot:
 
-     - An emoji ID for custom emojis. You can get a custom emoji's ID by sending `\:YourCustomEmoji:` in chat (prefix a backslash `\` character in front of your desired emoji).
+   ```
+   npm start
+   ```
 
-       ```json
-       "emojiRoleMap": {
-         "716344914706694165": ["ROLE_1_ID"],
-         "622635442013208589": ["ROLE_2_ID", "ROLE_3_ID", "ROLE_4_ID"]
-       }
-       ```
+   Verify the bot is running properly by sending messages in your server. The bot should log these messages in your terminal. If there are any issues, check [Troubleshooting](#troubleshooting).
 
-4. `npm start` to run the bot.
+You're ready to create your own Discord bot! 🎉
+
+If you were directed to follow the instructions found here from another `README`, return back there now and continue with the setup. Feel free to continue reading for more information.
+
+## Bots
+
+The following bots can be used by this template by adding them into the [/src/bots](./src/bots) folder:
+
+- [discord-active-role-bot](https://github.com/peterthehan/discord-active-role-bot)
+- [discord-audit-log-bot](https://github.com/peterthehan/discord-audit-log-bot)
+- [discord-birthday-role-bot](https://github.com/peterthehan/discord-birthday-role-bot)
+- [discord-cron-bot](https://github.com/peterthehan/discord-cron-bot)
+- [discord-dad-bot](https://github.com/peterthehan/discord-dad-bot)
+- [discord-dynamic-voice-channels-bot](https://github.com/peterthehan/discord-dynamic-voice-channels-bot)
+- [discord-reaction-role-bot](https://github.com/peterthehan/discord-reaction-role-bot)
+- [discord-starboard-bot](https://github.com/peterthehan/discord-starboard-bot)
+- [discord-superactive-role-bot](https://github.com/peterthehan/discord-superactive-role-bot)
+- [discord-twitter-bot](https://github.com/peterthehan/discord-twitter-bot)
+
+## Troubleshooting
+
+- Remove bots in your server that may conflict in functionality, e.g. multiple reaction role bots.
+- Use [Git Bash](https://git-scm.com/downloads) instead of the Command Prompt (cmd.exe) if you are on Windows.
+- Check that your:
+  - `node` version is `>=16.6.0` by running `node -v`.
+  - `npm` version is `>=7.0.0` by running `npm -v`.
+- If running the application outputs:
+  - `Error: Cannot find module '...'`, try running `npm i` in the project directory.
+  - `DiscordAPIError: Missing Permissions`, verify your bot has the correct `Manage` permissions.
 
 Visit for more help or information!
 
 <a href="https://discord.gg/WjEFnzC">
-  <img src="https://discord.com/api/guilds/258167954913361930/embed.png?style=banner2" title="Discord Server"/>
+  <img src="https://discord.com/api/guilds/258167954913361930/embed.png?style=banner2" title="Discord server invite" alt="Discord server invite" />
 </a>
