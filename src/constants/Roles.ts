@@ -1,9 +1,8 @@
 import {ReactionRoleConfiguration} from 'discordjs-reaction-role';
-import {
-  femaleRoleId,
-  genderMessageId,
-  maleRoleId,
-} from './ApplicationConstants';
+
+const genderMessageId = '1056825757453787146';
+const maleRoleId = '1038872911324397710';
+const femaleRoleId = '1038872691911958740';
 
 const genderRoles: ReactionRoleConfiguration[] = [
   {
@@ -15,6 +14,11 @@ const genderRoles: ReactionRoleConfiguration[] = [
     messageId: genderMessageId,
     reaction: '♀️',
     roleId: femaleRoleId,
+  },
+  {
+    messageId: '',
+    reaction: '',
+    roleId: '',
   },
 ];
 
