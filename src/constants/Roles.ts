@@ -1,6 +1,6 @@
 import {ReactionRoleConfiguration} from 'discordjs-reaction-role';
 
-const genderMessageId = '1056825757453787146';
+const genderMessageId = '1068947528457916446';
 const maleRoleId = '1038872911324397710';
 const femaleRoleId = '1038872691911958740';
 const transRoleId = '1038873511361523752';
