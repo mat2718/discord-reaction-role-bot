@@ -9,13 +9,13 @@ const nonRoleId = '1038873511361523752';
 const genderRoles: ReactionRoleConfiguration[] = [
   {
     messageId: genderMessageId,
-    reaction: '🚀',
-    roleId: maleRoleId,
+    reaction: '🛸',
+    roleId: femaleRoleId,
   },
   {
     messageId: genderMessageId,
-    reaction: '🛸',
-    roleId: femaleRoleId,
+    reaction: '🚀',
+    roleId: maleRoleId,
   },
   {
     messageId: genderMessageId,
