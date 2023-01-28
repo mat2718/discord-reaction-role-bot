@@ -6,13 +6,17 @@ const femaleRoleId = '1038872691911958740';
 const transRoleId = '1038873511361523752';
 const nonRoleId = '1038873511361523752';
 
+/* It's creating a new array and pushing the contents of genderRoles into it.
+</code> */
 const genderRoles: ReactionRoleConfiguration[] = [
   {
+    // TODO decide on emoji
     messageId: genderMessageId,
     reaction: '🛸',
     roleId: femaleRoleId,
   },
   {
+    // TODO decide on emoji
     messageId: genderMessageId,
     reaction: '🚀',
     roleId: maleRoleId,
@@ -20,23 +24,18 @@ const genderRoles: ReactionRoleConfiguration[] = [
   {
     messageId: genderMessageId,
     reaction: '🪐',
+    // TODO decide what this is in discord. like the actual role name
     roleId: transRoleId,
   },
   {
     messageId: genderMessageId,
     reaction: '🌌',
+    // TODO decide what this is in discord. like the actual role name
     roleId: nonRoleId,
   },
 ];
 
-// const regionRoles: ReactionRoleConfiguration[] = [
-//   {
-//     messageId: genderMessageId,
-//     reaction: '🤖',
-//     roleId: '858186589187735565',
-//   },
-// ];
-
+/* It's creating a new array and pushing the contents of genderRoles into it. */
 const configurations: ReactionRoleConfiguration[] = [];
 configurations.push(...genderRoles);
 

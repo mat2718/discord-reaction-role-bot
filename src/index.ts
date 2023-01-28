@@ -3,7 +3,7 @@ import {ReactionRole} from 'discordjs-reaction-role';
 import {discordBotToken} from './constants/ApplicationConstants';
 import configurations from './constants/Roles';
 
-// Create a client with the intents and partials required.
+/* Creating a new client with the intents and partials required. */
 const client = new Client({
   partials: [Partials.Message, Partials.Reaction],
   intents: [
@@ -13,15 +13,18 @@ const client = new Client({
   ],
 });
 
+/* Creating a new instance of the ReactionRole class. */
 const manager = new ReactionRole(client, configurations);
 
-// Start the bot.
+/* Logging the bot into discord. */
 client.on('ready', () => {
   console.log('Bot is online! Example: typescript. DJS version:', version);
 });
 client.login(discordBotToken);
 
-// Stop the bot when the process is closed (via Ctrl-C).
+/**
+ * It destroys the manager and client
+ */
 const destroy = () => {
   manager.teardown();
   client.destroy();
