@@ -28,4 +28,5 @@ exports.discordBotToken = void 0;
 const dotenv = __importStar(require("dotenv"));
 const TsUtil_1 = require("../utils/TsUtil");
 dotenv.config();
+// attempts to capture the discord token from the environment variable and return it or and error if it doesnt exist
 exports.discordBotToken = (_a = process.env.DISCORD_BOT_TOKEN) !== null && _a !== void 0 ? _a : (0, TsUtil_1.elseThrow)(`Undefined DISCORD_BOT_TOKEN`);
