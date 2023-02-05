@@ -29,3 +29,13 @@ jobs:
     - run: yarn
     - run: yarn build
 #     - run: npm test
+    - uses: actions/checkout@v2
+    - name: Create report file
+      run: date +%s > report.txt
+    - name: Commit report
+      run: |
+        git config --global user.name 'Matthew Terry'
+        git config --global user.email 'mat2718@users.noreply.github.com'
+        git commit -am "saving build"
+        git push
+  
