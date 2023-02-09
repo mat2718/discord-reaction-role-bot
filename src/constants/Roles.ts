@@ -56,7 +56,7 @@ const genderRoles: ReactionRoleConfiguration[] = [
   },
   {
     messageId: pronounsMessageId,
-    reaction: '❤',
+    reaction: '🧡',
     roleId: sheRoleId,
   },
   {
@@ -81,32 +81,32 @@ const genderRoles: ReactionRoleConfiguration[] = [
   },
   {
     messageId: locationMessageId,
-    reaction: '🌎',
+    reaction: '🍉',
     roleId: naRoleId,
   },
   {
     messageId: locationMessageId,
-    reaction: '🏖',
+    reaction: '🍌',
     roleId: saRoleId,
   },
   {
     messageId: locationMessageId,
-    reaction: '⛰',
+    reaction: '🍅',
     roleId: euRoleId,
   },
   {
     messageId: locationMessageId,
-    reaction: '🏜',
+    reaction: '🍈',
     roleId: afRoleId,
   },
   {
     messageId: locationMessageId,
-    reaction: '🏝',
+    reaction: '🍍',
     roleId: ocRoleId,
   },
   {
     messageId: locationMessageId,
-    reaction: '🗻',
+    reaction: '🥭',
     roleId: asRoleId,
   },
   {
