@@ -84,6 +84,51 @@ const genderRoles: ReactionRoleConfiguration[] = [
     reaction: '🌎',
     roleId: naRoleId,
   },
+  {
+    messageId: locationMessageId,
+    reaction: '🏖',
+    roleId: saRoleId,
+  },
+  {
+    messageId: locationMessageId,
+    reaction: '⛰',
+    roleId: euRoleId,
+  },
+  {
+    messageId: locationMessageId,
+    reaction: '🏜',
+    roleId: afRoleId,
+  },
+  {
+    messageId: locationMessageId,
+    reaction: '🏝',
+    roleId: ocRoleId,
+  },
+  {
+    messageId: locationMessageId,
+    reaction: '🗻',
+    roleId: asRoleId,
+  },
+  {
+    messageId: ageMessageId,
+    reaction: '🌸',
+    roleId: thirteenRoleId,
+  },
+  {
+    messageId: ageMessageId,
+    reaction: '🏵',
+    roleId: eighteenRoleId,
+  },
+  {
+    messageId: ageMessageId,
+    reaction: '🌺',
+    roleId: twentythreeRoleId,
+  },
+  {
+    messageId: ageMessageId,
+    reaction: '🌻',
+    roleId: twentyeightRoleId,
+  },
 ];
 
 /* It's creating a new array and pushing the contents of genderRoles into it. */
