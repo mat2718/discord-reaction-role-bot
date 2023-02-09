@@ -116,12 +116,12 @@ const genderRoles: ReactionRoleConfiguration[] = [
   },
   {
     messageId: ageMessageId,
-    reaction: '🏵',
+    reaction: '🌼',
     roleId: eighteenRoleId,
   },
   {
     messageId: ageMessageId,
-    reaction: '🌺',
+    reaction: '🍀',
     roleId: twentythreeRoleId,
   },
   {
